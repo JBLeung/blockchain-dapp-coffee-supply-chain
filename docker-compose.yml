@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+
+  dapp-coffee-supply-chain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - PORT=80
+    ports:
+      - '8080:80'
+    command: npm run dev

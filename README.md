@@ -17,6 +17,15 @@
 
 
 ## Prerequisites
+* Node v8.15.1
+* Truffle v5.0.10
+* Solidity - ^0.5.7 (solc-js)
+* web3 v0.20.7
+* openzeppelin-solidity v2.2.0
+* truffle-hdwallet-provider 1.0.6
+* lodash v4.17.10
+* server-static 1.13.2
+* connect v3.6.6
 
 
 ## How To Start

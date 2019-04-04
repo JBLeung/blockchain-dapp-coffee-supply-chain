@@ -1,0 +1,44 @@
+{
+  "name": "DApp-coffee-supply-chain",
+  "description": "DApp coffee supply chain",
+  "author": "Jeff",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "NODE_ENV=development node_modules/.bin/babel-node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "node_modules/eslint/bin/eslint.js --format node_modules/eslint-friendly-formatter --ext .js .",
+    "clean": "rm -Rf dist",
+    "build": "npm run clean && node_modules/.bin/babel src --out-dir dist",
+    "server": "NODE_ENV=production node dist/server.js",
+    "start": "NODE_ENV=production npm run server"
+  },
+  "engines": {
+    "node": ">=6.0",
+    "npm": ">=4.0"
+  },
+  "dependencies": {
+    "connect": "^3.6.6",
+    "lodash": "^4.17.10",
+    "openzeppelin-solidity": "^2.2.0",
+    "serve-static": "^1.13.2",
+    "solc": "^0.5.7",
+    "truffle": "^5.0.10",
+    "truffle-hdwallet-provider": "^1.0.6",
+    "web3": "^0.20.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.17.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-lodash": "^2.6.1",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
