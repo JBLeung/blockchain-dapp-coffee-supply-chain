@@ -26,6 +26,7 @@ services:
       - MNEMONIC=toddler tree movie salon object west junior unfair upset lens damage end
     volumes:
       - ./dapp-solidity:/truffle
+      - ./dapp-solidity/build:/truffle/build
     # command: ["sleep","36000000"]
     # command: truffle migrate --network rinkeby
     # command: truffle version
