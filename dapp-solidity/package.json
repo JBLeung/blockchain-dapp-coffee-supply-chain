@@ -1,0 +1,14 @@
+{
+  "name": "dapp-solidity",
+  "scripts": {
+    "build": "truffle compile",
+    "test": "truffle test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

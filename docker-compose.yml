@@ -15,3 +15,27 @@ services:
     ports:
       - '8080:80'
     command: npm run dev
+  dapp-solidity:
+    build:
+      context: ./dapp-solidity
+      dockerfile: Dockerfile
+    environment: 
+      - GANACHE_HOST=dapp-ganache
+    volumes:
+      - ./dapp-solidity/src/test:/truffle/test
+      - ./dapp-solidity/src/contracts:/truffle/contracts
+      - ./dapp-solidity/src/migrations:/truffle/migrations
+    # command: ["sleep","36000000"]
+    command: npm run test
+    depends_on:
+      - dapp-ganache
+    networks:
+      - default
+  dapp-ganache:
+    image: trufflesuite/ganache-cli:v6.4.2
+    command: ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
+    ports:
+      - '8545'
+    networks:
+      - default
+  

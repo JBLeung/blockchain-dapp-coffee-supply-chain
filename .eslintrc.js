@@ -8,6 +8,9 @@ module.exports = {
   ],
   plugins: [
     'lodash',
+    'import',
+    'promise',
+    'html'
   ],
   // Custom rules
   rules: {
