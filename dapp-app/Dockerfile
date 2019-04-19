@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 RUN apk add --update \
   bash \
@@ -15,6 +15,8 @@ RUN npm install
 
 COPY . /app/
 
-RUN npm run build
+RUN npm run build --only=prod
+
+EXPOSE 80
 
 CMD npm run start

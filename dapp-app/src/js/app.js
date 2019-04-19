@@ -188,7 +188,7 @@ App = {
     const processId = parseInt($(event.target).data('id'))
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
-      return instance.processItem(App.upc, {from: App.metamaskAccountID})
+      return instance.processItem(App.upc, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('processItem', result)
@@ -202,7 +202,7 @@ App = {
     const processId = parseInt($(event.target).data('id'))
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
-      return instance.packItem(App.upc, {from: App.metamaskAccountID})
+      return instance.packItem(App.upc, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('packItem', result)
@@ -218,7 +218,7 @@ App = {
     App.contracts.SupplyChain.deployed().then(function (instance) {
       const productPrice = web3.toWei(1, 'ether')
       console.log('productPrice', productPrice)
-      return instance.sellItem(App.upc, App.productPrice, {from: App.metamaskAccountID})
+      return instance.sellItem(App.upc, App.productPrice, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('sellItem', result)
@@ -233,7 +233,7 @@ App = {
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
       const walletValue = web3.toWei(3, 'ether')
-      return instance.buyItem(App.upc, {from: App.metamaskAccountID, value: walletValue})
+      return instance.buyItem(App.upc, { from: App.metamaskAccountID, value: walletValue })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('buyItem', result)
@@ -247,7 +247,7 @@ App = {
     const processId = parseInt($(event.target).data('id'))
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
-      return instance.shipItem(App.upc, {from: App.metamaskAccountID})
+      return instance.shipItem(App.upc, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('shipItem', result)
@@ -261,7 +261,7 @@ App = {
     const processId = parseInt($(event.target).data('id'))
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
-      return instance.receiveItem(App.upc, {from: App.metamaskAccountID})
+      return instance.receiveItem(App.upc, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('receiveItem', result)
@@ -275,7 +275,7 @@ App = {
     const processId = parseInt($(event.target).data('id'))
 
     App.contracts.SupplyChain.deployed().then(function (instance) {
-      return instance.purchaseItem(App.upc, {from: App.metamaskAccountID})
+      return instance.purchaseItem(App.upc, { from: App.metamaskAccountID })
     }).then(function (result) {
       $('#ftc-item').text(result)
       console.log('purchaseItem', result)

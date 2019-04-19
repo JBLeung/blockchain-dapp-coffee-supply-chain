@@ -4,15 +4,12 @@
   "author": "Jeff",
   "version": "1.0.0",
   "scripts": {
-    "dev": "NODE_ENV=development node_modules/.bin/babel-node src/server.js",
+    "dev": "NODE_ENV=development node_modules/.bin/babel-node src/js/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslint": "node_modules/eslint/bin/eslint.js --format node_modules/eslint-friendly-formatter --ext .js .",
-    "clean": "rm -Rf dist",
-    "build": "npm run clean && node_modules/.bin/babel src --out-dir dist",
-    "contract-server": "",
-    "contract-compile": "",
-    "contract-migrate": "",
-    "server": "NODE_ENV=production node dist/server.js",
+    "clean": "rm -Rf dist/*",
+    "build": "npm run clean && cp ./src/index.html ./dist && node_modules/.bin/babel src --out-dir dist",
+    "server": "NODE_ENV=production node dist/js/server.js",
     "start": "NODE_ENV=production npm run server"
   },
   "engines": {
@@ -22,12 +19,7 @@
   "dependencies": {
     "connect": "^3.6.6",
     "lodash": "^4.17.10",
-    "openzeppelin-solidity": "^2.2.0",
-    "serve-static": "^1.13.2",
-    "solc": "^0.5.7",
-    "truffle": "^5.0.12",
-    "truffle-hdwallet-provider": "^1.0.6",
-    "web3": "^0.20.7"
+    "serve-static": "^1.13.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

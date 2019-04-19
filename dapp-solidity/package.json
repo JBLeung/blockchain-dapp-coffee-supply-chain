@@ -2,13 +2,14 @@
   "name": "dapp-solidity",
   "scripts": {
     "build": "truffle compile",
+    "deploy": "truffle migrate --network rinkeby",
     "test": "truffle test"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "truffle-hdwallet-provider": "^1.0.0-web3one.4"
   }
 }

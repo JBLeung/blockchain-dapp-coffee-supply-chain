@@ -1,14 +1,20 @@
-FROM node:11-alpine
+FROM node:10-alpine
+
+RUN apk add --update \
+  bash \
+  git \
+  python \
+  gcc \
+  make \
+  g++ \
+  zlib-dev \
+  && rm -rf /var/cache/apk/*
+
 
 RUN mkdir /truffle
 WORKDIR /truffle
 
-COPY truffle.js /truffle/
 COPY package.json /truffle/
-
-RUN mkdir /truffle/contracts
-RUN mkdir /truffle/migrations
-RUN mkdir /truffle/test
 
 RUN npm install
 

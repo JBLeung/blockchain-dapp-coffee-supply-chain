@@ -2,13 +2,14 @@ version: '2'
 
 services:
 
-  dapp-coffee-supply-chain:
+  dapp-app:
     build:
-      context: .
+      context: ./dapp-app
       dockerfile: Dockerfile
     volumes:
-      - .:/app
+      - ./dapp-app:/app
       - /app/node_modules
+      - ./dapp-solidity/build:/app/build
     environment:
       - NODE_ENV=development
       - PORT=80
@@ -21,11 +22,14 @@ services:
       dockerfile: Dockerfile
     environment: 
       - GANACHE_HOST=dapp-ganache
+      - INFURA_ENDPOINT=https://rinkeby.infura.io/v3/56e47724040e4929ba2c1d3ff7672387
+      - MNEMONIC=toddler tree movie salon object west junior unfair upset lens damage end
     volumes:
-      - ./dapp-solidity/src/test:/truffle/test
-      - ./dapp-solidity/src/contracts:/truffle/contracts
-      - ./dapp-solidity/src/migrations:/truffle/migrations
+      - ./dapp-solidity:/truffle
     # command: ["sleep","36000000"]
+    # command: truffle migrate --network rinkeby
+    # command: truffle version
+    # command: truffle test
     command: npm run test
     depends_on:
       - dapp-ganache
@@ -33,7 +37,7 @@ services:
       - default
   dapp-ganache:
     image: trufflesuite/ganache-cli:v6.4.2
-    command: ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
+    command: ganache-cli -m "toddler tree movie salon object west junior unfair upset lens damage end"
     ports:
       - '8545'
     networks:
